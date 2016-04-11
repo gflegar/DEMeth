@@ -7,7 +7,7 @@ if ~exist('styles')
     styles = {'r', 'r--', 'g', 'g--', 'c'};
 end
 
-styles = styles(1:length(meths))
+styles = styles(1:length(meths));
 
 meths{length(meths)+1} = 'solution';
 styles{length(styles)+1} = 'k';
@@ -19,7 +19,7 @@ e = test.e;
 h = (e - s) / n;
 int = s:h:e;
 
-figure
+figure;
 for i = 1:length(meths)
     y = run_method(meths{i}, test, n);
     sz = size(y, 1);

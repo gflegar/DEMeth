@@ -5,7 +5,7 @@ switch name
 case 'euler'
     y = euler(test.s, test.sol(test.s), test.fn, h, n);
 case 'meuler'
-    y = enhanced_euler(test.s, test.sol(test.s), test.fn, h, n);
+    y = meuler(test.s, test.sol(test.s), test.fn, h, n);
 case 'kutta'
     K = [0 0 0 0; 0.5 0.5 0 0; 1 -1 2 0; 0 1/6 2/3 1/6];
     y = rk(K, test.s, test.sol(test.s), test.fn, h, n);
