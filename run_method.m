@@ -7,11 +7,11 @@ case 'euler'
 case 'meuler'
     y = meuler(test.s, test.sol(test.s), test.fn, h, n);
 case 'kutta'
-    K = [0 0 0 0; 0.5 0.5 0 0; 1 -1 2 0; 0 1/6 2/3 1/6];
-    y = rk(K, test.s, test.sol(test.s), test.fn, h, n);
+    y = kutta(test.s, test.sol(test.s), test.fn, h, n);
 case 'heun'
-    H = [0 0 0 0; 1/3 1/3 0 0; 1 0 2/3 0; 0 1/4 0 3/4];
-    y = rk(H, test.s, test.sol(test.s), test.fn, h, n);
+    y = heun(test.s, test.sol(test.s), test.fn, h, n);
+case 'rk'
+    y = runge_kutta(test.s, test.sol(test.s), test.fn, h, n);
 case 'trap'
     y = trapezoid(test.s, test.sol(test.s), test.A, h, n);
 case 'ab4'

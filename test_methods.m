@@ -1,4 +1,4 @@
-function test_methods(n, t, meths, styles)
+function [] = test_methods(n, t, meths, styles)
 if ~exist('meths')
     meths = {'euler', 'meuler', 'kutta', 'heun', 'ab4'};
 end
