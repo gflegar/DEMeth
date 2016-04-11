@@ -13,7 +13,7 @@ case 'heun'
 case 'rk'
     y = runge_kutta(test.s, test.sol(test.s), test.fn, h, n);
 case 'trap'
-    y = trapezoid(test.s, test.sol(test.s), test.A, h, n);
+    y = trapezoid(test.s, test.sol(test.s), test.fn, h, n);
 case 'ab4'
     ab4 = 1/24 * [-9; 37; -59; 55];
     y = multistep(ab4, test.s, test.sol(test.s), test.fn, h, n);

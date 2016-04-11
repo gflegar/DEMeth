@@ -1,14 +1,13 @@
-function y = trapezoid(t_0, y_0, A, h, n)
+function [y] = trapezoid(t_0, y_0, f, h, n)
 
-y = zeros(size(y_0, 1), n+1);
-y(:,1) = y_0;
-if size(A, 1) == 0
-    return;
+y = onestep_imp(t_0, y_0, h, n, @(t_i, y_i, h_i) solver(f, t_i, y_i, h_i));
+
 end
-I = eye(size(A));
-for i = 1:n
-    y(:,i+1) = (I - h/2 * A) \ ((I + h/2 * A) * y(:,i));
-end
+
+function [y_n] = solver(f, t_i, y_i, h)
+
+y_0 = y_i + h * f(t_i, y_i);
+y_n = fsolve(@(y) (h/2)*(f(t_i, y_i) + f(t_i+h,y)) + y_i - y, y_0);
 
 end
 

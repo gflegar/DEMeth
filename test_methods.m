@@ -19,6 +19,7 @@ e = test.e;
 h = (e - s) / n;
 int = s:h:e;
 
+close;
 figure;
 for i = 1:length(meths)
     y = run_method(meths{i}, test, n);
