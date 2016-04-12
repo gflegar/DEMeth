@@ -15,11 +15,11 @@ case 'rk'
 case 'trap'
     y = trapezoid(test.s, test.sol(test.s), test.fn, h, n);
 case 'ab4'
-    ab4 = 1/24 * [-9; 37; -59; 55];
-    y = multistep(ab4, test.s, test.sol(test.s), test.fn, h, n);
+    y = ab4(test.s, test.sol(test.s), test.fn, h, n);
 case 'ab5'
-    ab5 = 1/720 * [251; -1274; 2616; -2774; 1901];
-    y = multistep(ab5, test.s, test.sol(test.s), test.fn, h, n);
+    y = ab5(test.s, test.sol(test.s), test.fn, h, n);
+case 'am4'
+    y = am4(test.s, test.sol(test.s), test.fn, h, n);
 case 'solution'
     interval = num2cell(test.s:h:test.e);
     ycell = cellfun(test.sol, interval, 'UniformOutput', false);
